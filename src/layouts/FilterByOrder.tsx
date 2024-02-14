@@ -26,7 +26,7 @@ export default function FilterByOrder() {
 
   return (
     <div className="flex items-end gap-2">
-      <div className="border-dark-soft flex w-full flex-col justify-center gap-2 rounded-md border-b-2 bg-dark-muted p-4">
+      <div className="flex w-full flex-col justify-center gap-2 rounded-md border-b-2 border-dark-soft bg-dark-muted p-4">
         <h5>Filter by Order</h5>
         <select
           className="bg-dark-soft "
@@ -34,7 +34,11 @@ export default function FilterByOrder() {
           onChange={setParams}
         >
           {data.map((item, index) => (
-            <option className="capitalize" key={index + item} value={item}>
+            <option
+              className="capitalize"
+              key={index + item}
+              value={item.toLowerCase()}
+            >
               {item}
             </option>
           ))}
