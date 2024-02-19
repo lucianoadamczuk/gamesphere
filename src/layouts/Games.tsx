@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardSkeleton } from "@/components";
 import { getGames } from "@/services";
 import { sButton } from "@/styles";
@@ -17,6 +19,7 @@ export default function Games() {
 
   // When genre, platform, ordering change
   useEffect(() => {
+    setGames([]);
     async function getData() {
       const data = await getGames({
         genre: genre,
@@ -25,7 +28,7 @@ export default function Games() {
         page: "1",
       });
 
-      data && setGames(data);
+      setGames(data || []);
     }
 
     getData();
@@ -57,11 +60,11 @@ export default function Games() {
             ))}
           </>
         )}
-        {games.map((item) => (
+        {games?.map((item) => (
           <Card
             key={item.slug}
             slug={item.slug}
-            image={item.background_image}
+            image={item?.background_image}
             name={item.name}
           />
         ))}

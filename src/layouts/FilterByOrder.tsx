@@ -10,7 +10,7 @@ export default function FilterByOrder() {
   const params = new URLSearchParams(searchParams);
 
   function setParams(e: ChangeEvent<HTMLSelectElement>) {
-    params.set("ordering", e.target.value);
+    params.set("ordering", `-${e.target.value}`);
     router.replace(pathname + "?" + params);
   }
 

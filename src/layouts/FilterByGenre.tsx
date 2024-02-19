@@ -30,7 +30,7 @@ export default function FilterByGenre() {
 
   if (genres) {
     return (
-      <div className=" border-dark-soft flex flex-col justify-center gap-2 rounded-md border-b-2 bg-dark-muted p-4">
+      <div className=" flex flex-col justify-center gap-2 rounded-md border-b-2 border-dark-soft bg-dark-muted p-4">
         <h5>Filter by Genre</h5>
         <select
           className="bg-dark-soft "
@@ -43,6 +43,16 @@ export default function FilterByGenre() {
             </option>
           ))}
         </select>
+      </div>
+    );
+  } else {
+    return (
+      <div className="flex animate-pulse flex-col justify-center gap-2 rounded-md border-b-2 border-dark-soft bg-dark-muted p-4">
+        <h5>Loading...</h5>
+        <select
+          className="bg-dark-soft "
+          defaultValue="Loading options"
+        ></select>
       </div>
     );
   }
