@@ -1,4 +1,4 @@
-import { MainData, MainDataSkeleton } from "@/layouts/slug";
+import { MainData, MainDataSkeleton, Trailers } from "@/layouts/slug";
 import { Suspense } from "react";
 
 interface Props {
@@ -13,6 +13,12 @@ export default function page({ params }: Props) {
       <Suspense fallback={<MainDataSkeleton />}>
         <MainData params={params.slug} />
       </Suspense>
+      <Suspense
+        fallback={<p className=" animate-pulse">Searching trailers...</p>}
+      >
+        <Trailers slug={params.slug} />
+      </Suspense>
+      <MainDataSkeleton />
     </main>
   );
 }

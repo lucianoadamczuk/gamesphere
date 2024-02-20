@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` min-h-screen bg-dark-muted py-10 text-light`}>
+      <body
+        className={` flex min-h-screen items-center bg-dark-muted py-10 text-light`}
+      >
         <Navbar />
         {children}
       </body>

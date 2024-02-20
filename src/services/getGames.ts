@@ -13,15 +13,16 @@ export const getGames = async ({
   ordering: string;
 }): Promise<Game[] | undefined> => {
   try {
-    const data = await fetch(
+    let url =
       API_BASE +
-        "games" +
-        API_KEY +
-        `&genres=${genre}` +
-        `&platforms=${platform}` +
-        `&page=${page}` +
-        `&ordering=${ordering}`,
-    );
+      "games" +
+      API_KEY +
+      `&genres=${genre}` +
+      `&platforms=${platform}` +
+      `&page=${page}` +
+      `&ordering=${ordering}`;
+
+    const data = await fetch(url);
     if (!data.ok) {
       console.log("Error getting games");
     }

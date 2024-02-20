@@ -36,7 +36,7 @@ export default function Home() {
   });
 
   return (
-    <>
+    <div>
       <Header />
       <main>
         <section className="container grid gap-2 py-5 md:grid-cols-3">
@@ -47,6 +47,6 @@ export default function Home() {
         <Games />
       </main>
       <ScrollToTop />
-    </>
+    </div>
   );
 }
