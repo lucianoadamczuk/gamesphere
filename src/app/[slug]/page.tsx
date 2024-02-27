@@ -18,7 +18,6 @@ export default function page({ params }: Props) {
       >
         <Trailers slug={params.slug} />
       </Suspense>
-      <MainDataSkeleton />
     </main>
   );
 }

@@ -8,7 +8,9 @@ export async function getSearched(
   param: string,
 ): Promise<undefined | Response> {
   try {
-    const data = fetch(API_BASE + "games" + API_KEY + "&search=" + param);
+    const data = fetch(
+      API_BASE + "games" + API_KEY + "&search=" + param + "-name",
+    );
     const response = (await data).json();
     return response;
   } catch (error) {
