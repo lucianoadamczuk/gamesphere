@@ -1,4 +1,5 @@
 export interface Details {
+  detail: string;
   id: number;
   slug: string;
   name: string;
